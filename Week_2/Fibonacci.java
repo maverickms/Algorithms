@@ -13,12 +13,12 @@ class Fibonacci {
 	public static void main(String[] args) {
 		HashMap<Integer, Long> map = new HashMap<>();
 		Fibonacci f = new Fibonacci();
-		Scanner s = new Scanner(System.in);
+		try (Scanner s = new Scanner(System.in)) {
+			map.put(0, 0L);
+			map.put(1, 1L);
 
-		map.put(0, 0L);
-		map.put(1, 1L);
-
-		int n = s.nextInt();
-		System.out.println(f.nthNumber(n, map));
+			int n = s.nextInt();
+			System.out.println(f.nthNumber(n, map));
+		}
 	}
 }	

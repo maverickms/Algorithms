@@ -1,4 +1,3 @@
-import java.util.*;
 
 class CharacterReplacement {
   public static int findLength(String str, int k) {

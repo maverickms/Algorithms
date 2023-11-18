@@ -21,11 +21,12 @@ class CoinChange {
     }
 
     public static void main(String[] args) {
-    	Scanner s = new Scanner(System.in);
-    	int amount = s.nextInt();
-        int[] coins = {1, 5, 10};
+    	try (Scanner s = new Scanner(System.in)) {
+            int amount = s.nextInt();
+            int[] coins = {1, 5, 10};
 
-        CoinChange obj = new CoinChange();
-        System.out.println(obj.coinChange(amount, coins));
+            CoinChange obj = new CoinChange();
+            System.out.println(obj.coinChange(amount, coins));
+        }
     }
 }

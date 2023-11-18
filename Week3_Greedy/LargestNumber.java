@@ -43,14 +43,15 @@ class LargestNumber {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		ArrayList<Integer> nums = new ArrayList<>();
-		for(int i=0; i<n; i++)
-			nums.add(s.nextInt());
+		try (Scanner s = new Scanner(System.in)) {
+			int n = s.nextInt();
+			ArrayList<Integer> nums = new ArrayList<>();
+			for(int i=0; i<n; i++)
+				nums.add(s.nextInt());
 
-		LargestNumber l = new LargestNumber();
-		System.out.println(l.constructLargest(nums));	
+			LargestNumber l = new LargestNumber();
+			System.out.println(l.constructLargest(nums));
+		}	
 	}
 
 }

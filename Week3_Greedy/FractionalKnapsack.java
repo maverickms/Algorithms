@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Arrays;
-import java.util.ArrayList;
 
 class FractionalKnapsack {
 	
@@ -43,19 +42,20 @@ class FractionalKnapsack {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		FractionalKnapsack k = new FractionalKnapsack();
+		try (Scanner s = new Scanner(System.in)) {
+			FractionalKnapsack k = new FractionalKnapsack();
 
-		int num_items = s.nextInt();
-		int capacity = s.nextInt();
-		int[] value = new int[num_items], wts = new int[num_items];
+			int num_items = s.nextInt();
+			int capacity = s.nextInt();
+			int[] value = new int[num_items], wts = new int[num_items];
 
-		for(int i=0; i<num_items; i++) {
-			value[i] = s.nextInt();
-			wts[i] = s.nextInt();
-		}
+			for(int i=0; i<num_items; i++) {
+				value[i] = s.nextInt();
+				wts[i] = s.nextInt();
+			}
 
-		float loot = k.getMaxValue(capacity, value, wts);
-		System.out.println(String.format("%.4f", loot));	
+			float loot = k.getMaxValue(capacity, value, wts);
+			System.out.println(String.format("%.4f", loot));
+		}	
 	}
 }

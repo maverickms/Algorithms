@@ -27,10 +27,9 @@ class EmployeeFreeTime {
 
     List<Interval> result = new ArrayList<>();
 
-    int start = 0, end = 0;
+    int end = 0;
     if(!queue.isEmpty()) {
       Interval first = queue.poll();
-      start = first.start;
       end = first.end;
     }
 
@@ -40,7 +39,6 @@ class EmployeeFreeTime {
         end = Math.max(end, curr.end);
       } else {
         result.add(new Interval(end, curr.start));
-        start = curr.start;
         end = curr.end;
       }
     }

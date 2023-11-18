@@ -20,10 +20,11 @@ class FibPartialSum {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int m = s.nextInt(), n = s.nextInt();
-		FibPartialSum f = new FibPartialSum();
+		try (Scanner s = new Scanner(System.in)) {
+			int m = s.nextInt(), n = s.nextInt();
+			FibPartialSum f = new FibPartialSum();
 
-		System.out.println(f.fps(m, n));
+			System.out.println(f.fps(m, n));
+		}
 	}
 }

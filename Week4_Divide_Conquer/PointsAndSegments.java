@@ -21,26 +21,26 @@ class PointsAndSegments {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
+		try (Scanner s = new Scanner(System.in)) {
+			int no_segments = s.nextInt();
+			int no_points = s.nextInt();
+			int[][] segments = new int[no_segments][2];
+			int[] points = new int[no_points];
 
-		int no_segments = s.nextInt();
-		int no_points = s.nextInt();
-		int[][] segments = new int[no_segments][2];
-		int[] points = new int[no_points];
+			for(int i=0; i<no_segments; i++) {
+				segments[i][0] = s.nextInt();
+				segments[i][1] = s.nextInt();
+			}
 
-		for(int i=0; i<no_segments; i++) {
-			segments[i][0] = s.nextInt();
-			segments[i][1] = s.nextInt();
+			for(int i=0; i<no_points; i++) {
+				points[i] = s.nextInt();
+			}
+
+			int[] arr = naiveCountSegments(segments, points);
+
+			for(int i=0; i<arr.length; i++)
+				System.out.print(arr[i] + " ");
 		}
-
-		for(int i=0; i<no_points; i++) {
-			points[i] = s.nextInt();
-		}
-
-		int[] arr = naiveCountSegments(segments, points);
-
-		for(int i=0; i<arr.length; i++)
-			System.out.print(arr[i] + " ");
 
 		System.out.println();
 	}

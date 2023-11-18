@@ -2,7 +2,7 @@ import java.util.*;
 
 class NoRepeatSubstring {
 
-  public static int findLength(String str) {
+  public int findLength(String str) {
     Map<Character, Integer> map = new HashMap<>();
     int start = 0, maxLen = -1;
     for(int end=0; end<str.length(); end++) {

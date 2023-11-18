@@ -11,7 +11,6 @@ class StringAnagrams {
       freqMap.put(c, freqMap.getOrDefault(c, 0) + 1);
     }
 
-    Map<Character, Integer> tempMap = new HashMap<>(freqMap);
     for(int end=0; end<str.length(); end++) {
       char c = str.charAt(end);
       if(freqMap.containsKey(c)) {

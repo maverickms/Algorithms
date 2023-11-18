@@ -17,19 +17,19 @@ class MaxDotProduct {
 
 	public static void main(String[] args) {
 		
-		Scanner s = new Scanner(System.in);
+		try (Scanner s = new Scanner(System.in)) {
+			int n = s.nextInt();
+			long[] val = new long[n], freq = new long[n];
 
-		int n = s.nextInt();
-		long[] val = new long[n], freq = new long[n];
+			// value per item
+			for(int i=0; i<n; i++)
+				val[i] = s.nextLong();
 
-		// value per item
-		for(int i=0; i<n; i++)
-			val[i] = s.nextLong();
+			for(int i=0; i<n; i++)
+				freq[i] = s.nextLong();
 
-		for(int i=0; i<n; i++)
-			freq[i] = s.nextLong();
-
-		MaxDotProduct m = new MaxDotProduct();
-		System.out.println(m.maxProduct(val, freq));
+			MaxDotProduct m = new MaxDotProduct();
+			System.out.println(m.maxProduct(val, freq));
+		}
 	}
 }

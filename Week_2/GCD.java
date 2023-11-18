@@ -19,11 +19,12 @@ class GCD {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int a = s.nextInt(), b = s.nextInt();
+		try (Scanner s = new Scanner(System.in)) {
+			int a = s.nextInt(), b = s.nextInt();
 
-		GCD gcd = new GCD();
+			GCD gcd = new GCD();
 
-		System.out.println(gcd.getGCD(a, b));
+			System.out.println(gcd.getGCD(a, b));
+		}
 	}
 }

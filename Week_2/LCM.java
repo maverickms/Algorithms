@@ -20,12 +20,13 @@ class LCM {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int a = s.nextInt(), b = s.nextInt();
+		try (Scanner s = new Scanner(System.in)) {
+			int a = s.nextInt(), b = s.nextInt();
 
-		int gcd = getGCD(a, b);
-		long lcm = (long)a * (long)(b / gcd);
+			int gcd = getGCD(a, b);
+			long lcm = (long)a * (long)(b / gcd);
 
-		System.out.println(lcm);
+			System.out.println(lcm);
+		}
 	}
 }

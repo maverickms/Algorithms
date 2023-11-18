@@ -37,18 +37,19 @@ class CarFueling {
 	}
 
 	public static void main(String[] args) {
-		Scanner myObj = new Scanner(System.in);
-		CarFueling cf = new CarFueling();
+		try (Scanner myObj = new Scanner(System.in)) {
+			CarFueling cf = new CarFueling();
 
-		int dist = myObj.nextInt();
-		int range = myObj.nextInt();
-		int num_stops = myObj.nextInt();
-		int[] stops = new int[num_stops + 1];
+			int dist = myObj.nextInt();
+			int range = myObj.nextInt();
+			int num_stops = myObj.nextInt();
+			int[] stops = new int[num_stops + 1];
 
-		for(int i=1; i<=num_stops; i++)
-			stops[i] = myObj.nextInt();
+			for(int i=1; i<=num_stops; i++)
+				stops[i] = myObj.nextInt();
 
-		int count = cf.minRefuels(dist, range, stops); 
-		System.out.println(count);
+			int count = cf.minRefuels(dist, range, stops); 
+			System.out.println(count);
+		}
 	}
 }

@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.HashMap;
 
 class FibonacciLastDigit {
 	public int lastDigitForNth(int n) {
@@ -17,8 +16,9 @@ class FibonacciLastDigit {
 
 	public static void main(String[] args) {
 		FibonacciLastDigit f = new FibonacciLastDigit();
-		Scanner s = new Scanner(System.in);
-		int n = s.nextInt();
-		System.out.println(f.lastDigitForNth(n));
+		try (Scanner s = new Scanner(System.in)) {
+			int n = s.nextInt();
+			System.out.println(f.lastDigitForNth(n));
+		}
 	}
 }

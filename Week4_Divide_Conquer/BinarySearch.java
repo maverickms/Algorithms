@@ -25,19 +25,20 @@ class BinarySearch {
 	}
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		int arr_size = s.nextInt();
-		int[] arr = new int[arr_size];
+		try (Scanner s = new Scanner(System.in)) {
+			int arr_size = s.nextInt();
+			int[] arr = new int[arr_size];
 
-		for(int i=0; i <= arr_size-1; i++)
-			arr[i] = s.nextInt();
+			for(int i=0; i <= arr_size-1; i++)
+				arr[i] = s.nextInt();
 
-		int elem_size = s.nextInt();
-		int[] elems = new int[elem_size];
-		for(int i=0; i <= elem_size-1; i++)
-			elems[i] = s.nextInt(); 
+			int elem_size = s.nextInt();
+			int[] elems = new int[elem_size];
+			for(int i=0; i <= elem_size-1; i++)
+				elems[i] = s.nextInt(); 
 
-		search(arr, elems);
+			search(arr, elems);
+		}
 	}
 
 }

@@ -19,7 +19,9 @@ class MinimumMeetingRooms {
 
     Collections.sort(meetings, (a, b) -> Integer.compare(a.start, b.start));
     
-    int rooms = 1, start = meetings.get(0).start, end = meetings.get(0).end;
+    int rooms = 1;
+    meetings.get(0);
+    int end = meetings.get(0).end;
     for(int i = 1; i < meetings.size(); i++) {
       Meeting curr = meetings.get(i);
       if(end > curr.start) {
