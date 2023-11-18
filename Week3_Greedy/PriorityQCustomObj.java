@@ -1,28 +1,27 @@
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-class PQCustomObj {
+class CustomOBJ implements Comparable<CustomOBJ> {
+	private double value;
+	private int idx;
 
-	class CustomOBJ implements Comparable<CustomOBJ> {
-
-		private double value;
-		private int idx;
-
-		public CustomOBJ(double _value, int _idx) {
-			value = _value;
-			idx = _idx;
-		}
-
-		@Override
-		public int compareTo(CustomOBJ c) {
-			return (c.value > this.value) ? 1 : -1;
-		}
-
-		@Override
-		public String toString() {
-			return this.idx + ", " + this.value;
-		}
+	public CustomOBJ(double _value, int _idx) {
+		value = _value;
+		idx = _idx;
 	}
+
+	@Override
+	public int compareTo(CustomOBJ c) {
+		return (c.value > this.value) ? 1 : -1;
+	}
+
+	@Override
+	public String toString() {
+		return this.idx + ", " + this.value;
+	}
+}
+
+class PriorityQCustomObj {
 
 	public void test() {
 		CustomOBJ o1 = new CustomOBJ(100, 1);
@@ -41,7 +40,7 @@ class PQCustomObj {
 	}
 
 	public static void main(String[] args) {
-		PQCustomObj pq = new PQCustomObj();
+		PriorityQCustomObj pq = new PriorityQCustomObj();
 		pq.test();
 	}
 
